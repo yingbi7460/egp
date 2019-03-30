@@ -12,9 +12,16 @@ If you use the code, please refer the paper
 
 @inproceedings{ying2019anan,
 	title={An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification},
+	
 	author={Ying, Bi and Bing, Xue and Mengjie, Zhang},
+	
 	booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
+	
 	pages={1-9},
+	
 	year={2019},
+	
 	organization={ACM}
+	
 }
+8
