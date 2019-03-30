@@ -3,7 +3,7 @@ All Rights Reserved.
 
 Source code licensed under the BSD license. Please see the LICENSE file for details.
 
-An Automated Ensemble Learning Framework using Genetic Programming for Image Classification
+EGP
 =============
 If you use the code, please refer the paper 
 
