@@ -17,3 +17,11 @@ If you use the code, please cite the paper
 	pages={1-9},
 	year={2019},
 	organization={ACM}}
+
+
+Required python packages:
+	DEAP
+	Scikit-Learn
+	Scikit-image
+	Numpy
+	Scipy
