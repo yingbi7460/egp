@@ -31,9 +31,6 @@ from sklearn.model_selection import train_test_split
 ##import matplotlib.pyplot as plt
 randomSeeds=int(sys.argv[2])
 dataSetName=str(sys.argv[1])
-#randomSeeds = 1
-#dataSetName = 'att'
-#data_path = '/vol/grid-solar/sgeusers/yingbi/datasets_npy/multi_small/'
 
 def load_data(dataset_name, path=None):
     if path is not None:
@@ -46,9 +43,6 @@ def load_data(dataset_name, path=None):
     return x_train, y_train, x_test, y_test
 
 x_train, y_train, x_test, y_test = load_data(dataSetName)
-#x_train, y_train, x_test, y_test = load_data(dataSetName, path =data_path)
-##x_eval2, x_train, y_eval2, y_train = train_test_split(x_train, y_train, test_size =200, random_state = 5)
-##x_eval3, x_test, y_eval3, y_test = train_test_split(x_test, y_test, test_size = 50, random_state = 5)
 print(x_train.shape,y_train.shape, x_test.shape,y_test.shape)
 logging.basicConfig(level=logging.INFO, filename=str(randomSeeds)+dataSetName+'cgp3.log')
 logging.info('#############Strat##############')
@@ -178,19 +172,12 @@ def GPMain(randomSeeds):
     return pop,log, hof
 
 if __name__ == "__main__":
-    #randomSeeds1=[2324,542,54,66443,4454,242,6632567,2323,663,42442]
-    #randomSeeds1=[6464,14465,139,549,976,598636,14,4198,8632,23687]
-##    randomSeeds1=[7464611,36989,4152,12,563,78921,8563,321,9634,12268]
     beginTime = time.clock()
     pop, log, hof = GPMain(randomSeeds)
     endTime = time.clock()
     trainTime = endTime - beginTime
 
     testResults = evalTest(toolbox, hof[0], x_train, y_train,x_test, y_test)
-    #numpy.save(dataSetName+str(randomSeeds)+'train_features',train_tf)
-    #numpy.save(dataSetName+str(randomSeeds)+'test_features',test_tf)
-    #numpy.save(dataSetName+str(randomSeeds)+'test_label',testL)
-    #numpy.save(dataSetName+str(randomSeeds)+'train_label',trainLabel)
     saveFile.saveLog(str(randomSeeds) + 'all_pop.pickle', pop)
     saveFile.saveLog(str(randomSeeds) + 'best_pop.pickle', hof)
 
@@ -200,7 +187,6 @@ if __name__ == "__main__":
     
     # print(train_tf.shape, test_tf.shape)
     num_features = 0
-    ##    bestInd=saveFile.bestInd(toolbox,pop,5)
     saveFile.saveAllResults(randomSeeds, dataSetName, hof, log,
                                 hof, num_features, trainTime, testTime, testResults)
     logging.info(hof[0])
