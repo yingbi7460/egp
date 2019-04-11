@@ -6,23 +6,14 @@ from pylab import *
 import time
 from scipy import ndimage
 from skimage.feature import local_binary_pattern
-from skimage.exposure import equalize_hist
 from skimage.feature import hog
 from skimage.filters import median
-from skimage.filters import scharr
-from skimage.filters import scharr_h
-from skimage.filters import scharr_v
 from skimage.filters import sobel
-from skimage.filters import roberts
-from skimage.filters import prewitt
 from skimage.filters import gabor
 from skimage.filters import gabor_kernel
-from skimage.filters import hessian
 from skimage.filters import gaussian
 import skimage
 from collections import Counter
-from sklearn.feature_extraction.image import grid_to_graph
-from sklearn.cluster import AgglomerativeClustering
 #
 def gauD(left, si, or1, or2):
     return ndimage.gaussian_filter(left,sigma=si, order=[or1,or2])
