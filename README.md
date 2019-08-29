@@ -7,19 +7,17 @@ EGP
 =============
 If you use the code, please cite the paper 
 
-"Ying Bi, Bing Xue and Mengjie Zhang. An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification. In Proceedings of the Genetic and Evolutionary Computation Conference 2019
-(GECCO ’19). ACM, New York, NY, USA, 9 pages."
+"Ying Bi, Bing Xue and Mengjie Zhang. An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification. In Proceedings of the Genetic and Evolutionary Computation Conference 2019 (GECCO ’19). ACM, New York, NY, USA, 365-373 ."
 
------
 @inproceedings{ying2019anan,<br/>
 	title={An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification},<br/>
 	author={Ying, Bi and Bing, Xue and Mengjie, Zhang},<br/>
 	booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},<br/>
-	pages={1-9},<br/>
+	pages={365-373},<br/>
 	year={2019},<br/>
 	organization={ACM}}
 
-
+-----
 Required python packages:<br/>
 	DEAP<br/>
 	Scikit-Learn<br/>
