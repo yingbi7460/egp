@@ -11,18 +11,18 @@ If you use the code, please cite the paper
 (GECCO ’19). ACM, New York, NY, USA, 9 pages."
 
 -----
-@inproceedings{ying2019anan,
-	title={An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification},
-	author={Ying, Bi and Bing, Xue and Mengjie, Zhang},
-	booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},
-	pages={1-9},
-	year={2019},
+@inproceedings{ying2019anan, </bt>
+	title={An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification},</bt>
+	author={Ying, Bi and Bing, Xue and Mengjie, Zhang},</bt>
+	booktitle={Proceedings of the Genetic and Evolutionary Computation Conference},</bt>
+	pages={1-9},</bt>
+	year={2019},</bt>
 	organization={ACM}}
 
 
-Required python packages:
-	DEAP
-	Scikit-Learn
-	Scikit-image
-	Numpy
-	Scipy
+Required python packages:</bt>
+	DEAP</bt>
+	Scikit-Learn</bt>
+	Scikit-image</bt>
+	Numpy</bt>
+	Scipy</bt>
