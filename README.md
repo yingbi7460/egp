@@ -4,7 +4,7 @@ All Rights Reserved.
 Source code licensed under the BSD license. Please see the LICENSE file for details.
 
 EGP: An Automated Ensemble Learning Framework Using Genetic Programming for Image Classification
-=============
+===
 If you use the code, please cite the paper 
 
 @inproceedings{ying2019anan,<br/>
@@ -17,8 +17,8 @@ If you use the code, please cite the paper
 
 Required python packages:
 ====
-	DEAP <br/>
-	Scikit-Learn <br/>
-	Scikit-image <br/>
-	Numpy <br/>
-	Scipy <br/>
+	DEAP 
+	Scikit-Learn
+	Scikit-image
+	Numpy 
+	Scipy 
