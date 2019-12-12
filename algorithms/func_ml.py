@@ -13,7 +13,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import StratifiedKFold
 from sklearn.linear_model import LogisticRegression
 import xgboost as xgb
-import logging
+from sklearn.tree import DecisionTreeClassifier
 
 def train_model(model, x, y, k=3):
     min_max_scaler = preprocessing.MinMaxScaler()
@@ -52,8 +52,8 @@ def test_function_svm(model, x_train, y_train, num_class, x_test):
     min_max_scaler = preprocessing.MinMaxScaler()
     x_train = min_max_scaler.fit_transform(np.asarray(x_train))
     x_test = min_max_scaler.transform(np.asarray(x_test))
-    logging.info('Training set shape in testing '+str(x_train.shape))
-    logging.info('Test set shape in testing'+str(x_test.shape))
+    # logging.info('Training set shape in testing '+str(x_train.shape))
+    # logging.info('Test set shape in testing'+str(x_test.shape))
     model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
     y_label = []
@@ -67,8 +67,8 @@ def test_function_svm(model, x_train, y_train, num_class, x_test):
     return y_predict
 
 def test_function(model, x_train, y_train, x_test):
-    logging.info('Training set shape in testing '+str(x_train.shape))
-    logging.info('Test set shape in testing'+str(x_test.shape))
+    # logging.info('Training set shape in testing '+str(x_train.shape))
+    # logging.info('Test set shape in testing'+str(x_test.shape))
     min_max_scaler = preprocessing.MinMaxScaler()
     x_train = min_max_scaler.fit_transform(np.asarray(x_train))
     x_test = min_max_scaler.transform(np.asarray(x_test))

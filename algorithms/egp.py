@@ -2,33 +2,24 @@
 import random
 import time
 import operator
-import evalGP_hof3 as evalGP
+import evalGP
 import sys
 # only for strongly typed GP
-import gp_restrict_con7 as gp_restrict
+import gp_restrict
 import numpy
 # deap package
 from deap import base, creator, tools, gp
 # fitness function
 from FEVal_new import evalTrain
 from FEVal_new import evalTest_fromvector as evalTest
-##from FEVal_norm_fast import evalTest_multi as evalTest
-from FEVal_new import feature_length
-##plot tree and save
-import saveFile
-##image Data
-from strongGPDataType import ndarray, numInts, indexType2, testData,region
+from strongGPDataType import numInts
 from strongGPDataType import kernelSize,histdata,filterData,coordsX1,coordsX2,trainData
-from strongGPDataType import numClass, windowSize2,windowSize3,poolingType, imageDa, trainLabel
+from strongGPDataType import windowSize2,windowSize3,poolingType, imageDa, trainLabel
 # defined by author
-import functionSet_renew3 as fs
-import feature_function as fe_fs
+import functionSet as fs
 import func_ml as fs_ml
-import logging
 from sklearn.model_selection import train_test_split
-'''just one layer poolign and one layer filtering, finished and run experiments'''
-##from plot_confusion_matrix import plot_conf_matrix
-##import matplotlib.pyplot as plt
+
 randomSeeds=int(sys.argv[2])
 dataSetName=str(sys.argv[1])
 
@@ -44,11 +35,7 @@ def load_data(dataset_name, path=None):
 
 x_train, y_train, x_test, y_test = load_data(dataSetName)
 print(x_train.shape,y_train.shape, x_test.shape,y_test.shape)
-logging.basicConfig(level=logging.INFO, filename=str(randomSeeds)+dataSetName+'cgp3.log')
-logging.info('#############Strat##############')
-logging.info('Algorithm name: cgp3.py ')
-logging.info('Training set shape '+str(x_train.shape))
-logging.info('Test set shape '+str(x_test.shape))
+
 #parameters:
 num_train = x_train.shape[0]
 population=100
@@ -60,14 +47,7 @@ totalRuns = 1
 initialMinDepth=2
 initialMaxDepth=8
 maxDepth=8
-logging.info('population ' + str(population))
-logging.info('generation ' + str(generation))
-logging.info('cxProb ' + str(cxProb))
-logging.info('mutProb ' + str(mutProb))
-logging.info('elitismProb ' + str(elitismProb))
-logging.info('initialMinDepth ' + str(initialMinDepth))
-logging.info('initialMaxDepth ' + str(initialMaxDepth))
-logging.info('maxDepth ' + str(maxDepth))
+
 ##GP
 pset = gp.PrimitiveSetTyped('MAIN', [filterData, trainLabel], trainData, prefix = 'Image')
 ##imageDa
@@ -178,19 +158,13 @@ if __name__ == "__main__":
     trainTime = endTime - beginTime
 
     testResults = evalTest(toolbox, hof[0], x_train, y_train,x_test, y_test)
-    saveFile.saveLog(str(randomSeeds) + 'all_pop.pickle', pop)
-    saveFile.saveLog(str(randomSeeds) + 'best_pop.pickle', hof)
+    #saveFile.saveLog(str(randomSeeds) + 'all_pop.pickle', pop)
+    #saveFile.saveLog(str(randomSeeds) + 'best_pop.pickle', hof)
 
     testTime = time.clock() - endTime
     print('testResults ', testResults)
-    logging.info('test results ' + str(testResults))
     
     # print(train_tf.shape, test_tf.shape)
     num_features = 0
-    saveFile.saveAllResults(randomSeeds, dataSetName, hof, log,
-                                hof, num_features, trainTime, testTime, testResults)
-    logging.info(hof[0])
-    logging.info('train time ' + str(trainTime))
-    logging.info('test time ' + str(testTime))
-    logging.info('End')
-
+    #saveFile.saveAllResults(randomSeeds, dataSetName, hof, log,
+                                #hof, num_features, trainTime, testTime, testResults)

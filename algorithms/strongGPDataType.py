@@ -10,10 +10,6 @@ class kernelSize:
 class poolingType:
     def __init__(ndarray):
         pass
-    
-class ndarray:
-    def __init__(ndarray):
-        pass
 
 class trainLabel:
     def __init__(ndarray):
